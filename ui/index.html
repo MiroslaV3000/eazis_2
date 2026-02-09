@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализатор языка текста</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 Анализатор языка текста</h1>
+            <p>Определите язык текста на веб-странице с помощью трех методов анализа</p>
+        </header>
+        <main>
+            <section class="input-section">
+                <div class="input-group">
+                    <label for="urlInput">Введите URL веб-страницы:</label>
+                    <div class="input-row">
+                        <input
+                            type="url"
+                            id="urlInput"
+                            placeholder="https://example.com"
+                            value="https://www.kochbar.de/"
+                        >
+                        <button id="analyzeBtn" class="btn-primary">Анализировать</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="results-header">
+                    <h2>Результаты анализа</h2>
+                    <div class="actions">
+                        <input
+                            type="text"
+                            id="filenameInput"
+                            placeholder="Имя файла (без расширения)"
+                            value="language_analysis"
+                        >
+                        <button id="saveBtn" class="btn-secondary">Сохранить в файл</button>
+                    </div>
+                </div>
+
+                <div class="url-display">
+                    <strong>Анализируемый URL:</strong>
+                    <span id="analyzedUrl"></span>
+                </div>
+
+                <div class="methods-grid" id="methodsContainer">
+                    <!-- Результаты будут добавлены здесь динамически -->
+                </div>
+            </section>
+
+            <div id="loading" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Анализируем страницу...</p>
+            </div>
+
+            <div id="message" class="message" style="display: none;"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
